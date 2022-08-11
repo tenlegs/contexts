@@ -60,9 +60,10 @@ class BrowserKit
     public function send($method, $url, $parameters = [], $files = [], $content = null, $headers = [])
     {
         foreach ($files as $originalName => &$file) {
-            if (is_string($file)) {
-                $file = new UploadedFile($file, $originalName);
-            }
+            $file = [
+                'name' => $originalName,
+                'tmp_name' => $file
+            ];
         }
 
         $client = $this->mink->getSession()->getDriver()->getClient();
