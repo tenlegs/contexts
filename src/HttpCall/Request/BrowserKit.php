@@ -5,7 +5,6 @@ namespace Behatch\HttpCall\Request;
 use Behat\Mink\Driver\Goutte\Client as GoutteClient;
 use Behat\Mink\Mink;
 use Symfony\Component\BrowserKit\Client as BrowserKitClient;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class BrowserKit
 {
